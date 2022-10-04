@@ -1,0 +1,11 @@
+name: BlockReset
+main: net.rapust.blockreset.BlockReset
+version: project_version
+author: rapustka#3096
+
+commands:
+  blockreset:
+    description: Reload the BlockReset plugin config
+    usage: /blockreset reload
+    aliases:
+      - br

@@ -1,0 +1,12 @@
+messages:
+  noPerm: "&cYou don't have permission!"
+  error: "&cError while reloading, check the console!"
+  success: "&aConfig is reloaded!"
+
+settings:
+  canBreakBlock: true
+  timeToClearAfterLast: 2500
+  blocks:
+    first:
+      material: REDSTONE_BLOCK
+      time: 7500

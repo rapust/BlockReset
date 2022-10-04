@@ -1,0 +1,38 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+}
+
+apply plugin: 'java'
+
+group 'net.rapust'
+version '1.0-RELEASE'
+
+repositories {
+    maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+    mavenLocal()
+    mavenCentral()
+}
+
+task install {
+    group 'plugin'
+    dependsOn(shadowJar)
+}
+
+shadowJar {
+    getDestinationDirectory().set(new File("${projectDir}", "output"))
+    archiveFileName.set("${project.name}.jar")
+    filesMatching('plugin.yml') {
+        filter {
+            it.replace('project_version', "${project.version}")
+        }
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.8-R0.1-SNAPSHOT'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
