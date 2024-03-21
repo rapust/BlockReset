@@ -14,6 +14,6 @@ or
 in the folder with the code.
 
 # Contacts
-If you have any questions, you can contact me in the discord: rapust
+If you have any questions, you can contact me in Discord: rapust
 
 The plugin page on spigotmc: https://www.spigotmc.org/resources/blockreset.105192/
